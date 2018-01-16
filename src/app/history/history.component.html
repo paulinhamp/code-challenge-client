@@ -1,0 +1,16 @@
+Page: {{page}} <br>
+<button class="btn btn-link" (click)="prev()">Prev</button> - <button (click)="next()" class="btn btn-link">Next</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Computed at</th>
+      <th scope="col">Ips</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let history of data.data'>
+      <td>{{history.computed_at | date:'medium'}}</td>
+      <td class='ip-cell'><pre>{{history.ip_code | json}}</pre></td>
+    </tr>
+  </tbody>
+</table>
